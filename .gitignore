@@ -1,0 +1,20 @@
+# Visual Studio Freezing turn-offs and temporary files
+.vs/
+x64/
+Debug/
+Release/
+
+# User-specific files
+*.vcxproj.user
+*.vcxproj.filters
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Output files
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.log
