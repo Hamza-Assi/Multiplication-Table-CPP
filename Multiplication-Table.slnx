@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Multiplication-Table.vcxproj" />
+  <Project Path="Multiplication-Table.vcxproj" Id="0e3f6095-d643-46a1-b479-9592d7a255d8" />
 </Solution>

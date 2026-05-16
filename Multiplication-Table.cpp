@@ -1,44 +1,50 @@
 #include<iostream>
-
 using namespace std;
 
-void MultiplicationTable(int Array[10][10])			//Generate multiplication Table using 2D Array.
-{
 
-	//first loop for the rows
-	for (int i = 0; i < 10; i++)
+void ReadTableDimensions(int& Rows, int& Columns)	//Dynamic Dimension 
+{
+	cout << "Enter number of rows: ";			//user enter Number of Rows.
+	cin >> Rows;
+
+	cout << "Enter number of columns: ";		//user enter Number of Columns
+	cin >> Columns;
+}
+
+void MultiplicationTable(int Array[100][100], int Rows, int Columns) //take the user input to do the Multiplication 
+{
+	for (int i = 0; i < Rows; i++)		//loop for Rows
 	{
-		//second loop for the columns
-		for (int j = 0; j < 10; j++)
+		for (int j = 0; j < Columns; j++)	//loop for columns
 		{
-			// Array is base 0 ,add 1 to start Multiplication Form 1.
 			Array[i][j] = (i + 1) * (j + 1);
 		}
 	}
 }
 
-void PrintArray(int Array[10][10])			//procedure to print the array.
+void PrintArray(int Array[100][100], int Rows, int Columns)		//print the table as the user enter 
 {
-
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < Rows; i++)
 	{
-		for (int j = 0; j < 10; j++)
+		for (int j = 0; j < Columns; j++)
 		{
-			printf("%0*d ", 2, Array[i][j]);   // formating The output.
+			printf("%0*d ", 2, Array[i][j]);			// optimize the output
 		}
-		cout << endl;	// enter a line for each round of the array.
+		cout << endl;
 	}
 }
 
 int main()
 {
-	int Array[10][10];
+	int Array[100][100];
+	int Rows = 0, Columns = 0;
 
-	MultiplicationTable(Array); // calling the array with filled value
+	ReadTableDimensions(Rows, Columns); //call the fun to read the dimension of the table 
 
-	cout << "---Multiplication Table 1 to 10 ----\n\n";
+	cout << "\n--- Multiplication Table 1 to " << Rows << " x " << Columns << " ---\n\n";
 
-	PrintArray(Array);			//Print the array
+	MultiplicationTable(Array, Rows, Columns);	//fill the table
+	PrintArray(Array, Rows, Columns);			// print the table
 
 	return 0;
 }
